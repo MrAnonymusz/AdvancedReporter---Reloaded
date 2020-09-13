@@ -17,3 +17,7 @@
 * PDO PHP Extension
 * Tokenizer PHP Extension
 * XML PHP Extension
+
+### Screenshots
+![Screenshot #1](https://i.ibb.co/4Vx8SPm/advreporter-screenshot-01.jpg)
+![Screenshot #2](https://i.ibb.co/4tn8QsK/advreporter-screenshot-02.jpg)
