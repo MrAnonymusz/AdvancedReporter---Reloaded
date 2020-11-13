@@ -3,7 +3,7 @@
 </p>
 <h2 align="center">This project is still under development!</h2>
 
-**Release Date:** __(No date set!)__ <br/>
+**Release Date:** _2020.11.XX-2020.12.XX_ <br/>
 **Additional Info:** *This project will be built on the latest version of [Laravel (7.x)](https://laravel.com/docs/7.x/releases) so make sure your hosting supports the framework.*
 
 ## Requirements:
