@@ -1,0 +1,359 @@
+/*
+  >> Font Icon Mixin
+*/
+
+@mixin font-icon($font-family, $font-weight, $content) {
+  font-family: $font-family;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: $font-weight;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: $content;
+}
+
+/*
+  >> Scrollbar & Selection
+*/
+
+@each $color, $value in $theme-colors {
+  body.accent-#{$color} {
+    // Selection
+    ::selection {
+      color: white;
+      background-color: $value;
+    }
+  }
+}
+
+/*
+  >> Custom Alerts
+*/
+
+.custom-alert {
+  color: white;
+  background-color: $secondary;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-sm;
+
+  > .alert-box-left {
+    background-color: darken($secondary, 7.5%);
+    position: relative;
+    width: 64px;
+    float: left;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+
+    > .alert-icon {
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  > .alert-box-right {
+    width: calc(100% - 64px);
+    float: left;
+    padding: $custom-alert-padding-y $custom-alert-padding-x;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .custom-alert {
+    &.custom-alert-#{$color} {
+      color: white;
+      background-color: $value;
+
+      > .alert-box-left {
+        background-color: darken($value, 7.5%);
+      }
+    }
+  }
+}
+
+/*
+  >> Roles
+*/
+
+.role {
+  color: white;
+  background-color: lighten($secondary, 10%);
+  display: inline-block;
+  position: relative;
+  border-radius: $border-radius;
+  padding: 2.5px 12.5px;
+
+  &.role-admin {
+    color: white;
+    background-color: $danger;
+
+    &::before {
+      @include font-icon('Font Awesome 5 Free', 800, '\f508');
+      padding-right: 10px;
+    }
+  }
+
+  &.role-moderator {
+    color: white;
+    background-color: lighten($info, 10%);
+
+    &::before {
+      @include font-icon('Font Awesome 5 Free', 800, '\f505');
+      padding-right: 10px;
+    }
+  }
+}
+
+/*
+  >> Code
+*/
+
+code {
+  &.code-alt  {
+    padding: 2.5px 5px;
+    border: 1px solid $pink;
+    border-radius: $border-radius;
+  }
+}
+
+/*
+  >> Card Buttons
+*/
+
+@each $color, $value in $theme-colors {
+  .btn-tool {
+    &.btn-tool-#{$color} {
+      color: white;
+      background-color: $value;
+
+      &:focus {
+        color: white;
+        background-color: $value;
+      }
+
+      &:hover {
+        color: white;
+        background-color: darken($value, 5%);
+      }
+    }
+  }
+}
+
+/*
+  >> Auth Container
+   >>> Login
+*/
+
+.auth-login-pw-reminder-container {
+  display: block;
+  position: relative;
+  min-height: 36px;
+  width: 100%;
+
+  > a {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+/*
+  >> Report List Head Buttons
+*/
+
+.report-list-head-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/*
+  >> Report List Coordinates Highlight
+*/
+
+.rl-coordinates-highlight {
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+/*
+  >> Word Counter
+*/
+
+.word-counter {
+  font-size: 14px;
+  text-align: right;
+  margin: 0;
+}
+
+/*
+  >> Form Helper
+*/
+
+.form-helper {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  cursor: default;
+
+  > .fh-extra {
+    vertical-align: super;
+  }
+}
+
+/*
+  >> Account Settings Page
+*/
+
+.account-settings-page {
+  .avatar-container {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    margin: 0 0 0 50%;
+    transform: translateX(-50%);
+
+    @each $color, $value in $theme-colors {
+      &.avatar-container-#{$color} {
+        > .avatar-update-link {
+          background-color: rgba($value, 0.35)!important;
+        }
+      }
+    }
+
+    > .image {
+      border-radius: 200px;
+      width: 100%;
+      height: 100%;
+    }
+
+    > .avatar-update-link {
+      color:white!important;
+      background-color: transparent;
+      position: absolute;
+      border-radius: 200px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      > .link-content {
+        position: absolute;
+        width: 86px;
+        height: fit-content;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        > .icon {
+          font-size: 28px;
+          margin-bottom: 7.5px;
+        }
+
+        > .text {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .avatar-img {
+    border-radius: 200px;
+    width: 128px;
+    height: 128px;
+    margin: 0 0 0 50%;
+    transform: translateX(-50%);
+  }
+
+  .uuac-crafatar-logo {
+    width: 2px;
+    margin-right: 10px;
+  }
+
+  .uuac-crafatar {
+    width: 36px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    margin: 0;
+  }
+}
+
+.side-online-user-list {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  > .list-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    margin: 0 15px 15px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .item-avatar-box {
+      position: relative;
+
+      > img {
+        width: 34px;
+        height: 34px;
+        border-radius: 200px;
+        margin-right: 15px;
+        border: 2px solid $success;
+      }
+
+      &::after {
+        color: transparent;
+        background-color: darken($success, 15%);
+        position: absolute;
+        bottom: 0;
+        right: 16.5px;
+        width: 10px;
+        height: 10px;
+        content: " ";
+        border-radius: 200px;
+      }
+    }
+
+    .item-avatar-text {
+      cursor: default;
+      width: 130px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 5.5px 0 0 0;
+    }
+  }
+}
+
+.avatar-img-ul {
+  width: 28px;
+  height: 28px;
+  border-radius: 200px;
+  margin-right: 10px;
+}

@@ -1,0 +1,36 @@
+/*
+  >> Code
+*/
+
+code {
+  border: 1px solid transparent;
+  border-color: $pink;
+  border-radius: $border-radius;
+  padding: 0 5px;
+}
+
+/*
+  >> Semantic UI Input
+*/
+
+@each $color, $value in $theme-colors {
+  .ui.ui-theme-#{$color} {
+    &.input {
+      &.focus > input, > input:focus {
+        border-color: $value;
+      }
+    }
+  
+    &.labeled.input:not([class*="corner labeled"]) .label:first-child + input:focus {
+      border-left-color: $value;
+    }
+  
+    &[class*="right labeled"].input > input:focus, &.action.input:not([class*="left action"]) > input:focus {
+      border-right-color: $value !important;
+    }
+  
+    &[class*="left action"].input > input:focus {
+      border-left-color: $value !important;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+  ],
+  "settings": {
+    "liveSassCompile.settings.formats": [
+      {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "/public/assets/main/css",
+      },
+      /* {
+        "format": "compressed",
+        "extensionName": ".min.css",
+        "savePath": "/assets/css"
+      } */
+    ],
+    "liveSassCompile.settings.includeItems": [
+      "/public/assets/main/scss/custom/core.scss"
+    ],
+    "liveSassCompile.settings.generateMap": false
+  }
+}

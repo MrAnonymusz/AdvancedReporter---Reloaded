@@ -1,0 +1,27 @@
+// Color system
+$n-pink: #ff5c5c;
+
+$colors: ()!default;
+$theme-colors: ()!default;
+
+$colors: map-merge((
+  "n-pink": $n-pink
+), $colors);
+
+$theme-colors: map-merge(
+  (
+    "n-pink": $n-pink
+  ),
+  $theme-colors
+);
+
+// Padding
+$custom-alert-padding-y: .60rem;
+$custom-alert-padding-x: .75rem;
+
+// Dropdowns
+
+$dropdown-padding-y: 0 !default;
+
+$dropdown-item-padding-y: 7.5px !default;
+$dropdown-item-padding-x: 15px !default;
