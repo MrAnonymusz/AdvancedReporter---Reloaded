@@ -12,7 +12,7 @@
 ### _You can check [laravel's official site](https://laravel.com/docs/7.x) for more information._
 
 # Installation Guide
-1. **Download the project from github or from this link: [https://mega.nz/file/FF5CXB4L#JuPTQ7GsY_p_J00Mk3n1588AUO7jwZvl5zPGgTfuRtc](https://mega.nz/file/FF5CXB4L#JuPTQ7GsY_p_J00Mk3n1588AUO7jwZvl5zPGgTfuRtc)**
+1. **Download the project from github or from this link: [https://mega.nz/file/gApkGTjT#W8Zs-6tYsAkBhjny5MiW2-wLwJFU-eseGnKylxcWVgo](https://mega.nz/file/gApkGTjT#W8Zs-6tYsAkBhjny5MiW2-wLwJFU-eseGnKylxcWVgo)**
 
 2. a) If you are installing it a local machine you can watch [this video](https://www.youtube.com/watch?v=H3uRXvwXz1o) on how to install it on local machine.<br/>
    b) If you are installing it on a hosting first make sure your hosting is supporting laravel and after that you should check your hosting admin panel if they have a `software installer` or a `third party software button` for example _[softaculous](https://www.softaculous.com/)_ if they don't have one or you don't know how to use it try asking your hosting company for support.
